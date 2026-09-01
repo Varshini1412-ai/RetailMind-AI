@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Analyze Text{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Analyze sentiment & emotion in seconds</h1>
+    <p>Paste one or more reviews, tweets, or feedback lines below — one per line for batch analysis.</p>
+</section>
+
+<section class="input-card">
+    <textarea id="text-input" rows="8" placeholder="e.g.&#10;I absolutely loved this product, it exceeded my expectations!&#10;The customer service was slow and frustrating.&#10;It's okay, nothing special but does the job."></textarea>
+
+    <div class="input-actions">
+        <button id="analyze-btn" class="btn-primary">Analyze</button>
+        <button id="clear-btn" class="btn-secondary">Clear</button>
+        <span id="loading-indicator" class="hidden">Analyzing...</span>
+    </div>
+</section>
+
+<section id="results-section" class="hidden">
+    <h2>Results</h2>
+    <div id="results-list" class="results-list"></div>
+
+    <div class="charts-row">
+        <div id="sentiment-chart" class="chart-box"></div>
+        <div id="emotion-chart" class="chart-box"></div>
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
