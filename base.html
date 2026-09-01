@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sentiment & Emotion Analyzer{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <span class="logo-dot"></span> Sentiment & Emotion Analyzer
+        </div>
+        <div class="navbar-links">
+            <a href="/">Analyze</a>
+            <a href="/history">History</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        Built with Flask, Hugging Face Transformers & Plotly
+    </footer>
+</body>
+</html>
